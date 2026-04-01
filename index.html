@@ -15,20 +15,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:          #0b0c0e;
-  --bg2:         #111316;
-  --card:        #14161a;
-  --card2:       #1a1d23;
-  --border:      rgba(255,255,255,0.07);
-  --border2:     rgba(255,255,255,0.12);
+  --bg:          #070707;
+  --bg2:         #0f0b09;
+  --card:        #120d0b;
+  --card2:       #1a130f;
+  --border:      rgba(255,255,255,0.09);
+  --border2:     rgba(255,255,255,0.15);
   --white:       #ffffff;
   --off-white:   #e8eaed;
   --gray:        #6b7280;
   --gray2:       #9ca3af;
-  --accent:      #00e5a0;
-  --accent2:     #00c8f0;
-  --accent-dim:  rgba(0,229,160,0.1);
-  --accent-dim2: rgba(0,229,160,0.18);
+  --accent:      #ff5b1f;
+  --accent2:     #ff8a1f;
+  --accent-dim:  rgba(255,91,31,0.1);
+  --accent-dim2: rgba(255,91,31,0.18);
   --red:         rgba(239,68,68,0.9);
   --font-d:      'Syne', sans-serif;
   --font-b:      'DM Sans', sans-serif;
@@ -39,7 +39,11 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(1100px 700px at 50% -15%, rgba(255,108,40,0.24), transparent 63%),
+    radial-gradient(850px 560px at 50% 110%, rgba(255,91,31,0.26), transparent 70%),
+    radial-gradient(700px 520px at 10% 18%, rgba(255,138,31,0.1), transparent 62%),
+    var(--bg);
   color: var(--white);
   font-family: var(--font-b);
   font-size: 16px;
@@ -67,10 +71,14 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   height: 68px;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 52px;
-  background: rgba(11,12,14,0.9);
+  padding: 0 34px;
+  max-width: 1080px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: rgba(10,7,6,0.82);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: 0 10px 36px rgba(0,0,0,.35);
 }
 
 .nav-logo {
@@ -88,7 +96,8 @@ nav {
 .nav-links a:hover { color: var(--white); }
 
 .nav-cta {
-  background: var(--accent); color: #000;
+  background: linear-gradient(135deg, var(--accent), #ff7a1f);
+  color: #fff;
   font-family: var(--font-b); font-size: 0.85rem; font-weight: 700;
   padding: 10px 22px; border-radius: 50px;
   transition: opacity .2s, transform .2s;
@@ -134,16 +143,16 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
 ═══════════════════════════════════════ */
 .btn-wa {
   display: inline-flex; align-items: center; gap: 10px;
-  background: var(--accent); color: #000;
+  background: linear-gradient(135deg, var(--accent), #ff7a1f); color: #fff;
   font-family: var(--font-b); font-size: 0.95rem; font-weight: 700;
   padding: 15px 32px; border-radius: 50px;
   transition: opacity .2s, transform .2s, box-shadow .2s;
-  box-shadow: 0 0 28px rgba(0,229,160,.2);
+  box-shadow: 0 10px 26px rgba(255,91,31,.25);
   cursor: pointer; border: none;
 }
 .btn-wa:hover {
   opacity: .87; transform: translateY(-2px);
-  box-shadow: 0 0 48px rgba(0,229,160,.38);
+  box-shadow: 0 16px 42px rgba(255,91,31,.4);
 }
 .btn-wa svg { width: 19px; height: 19px; flex-shrink: 0; }
 
@@ -162,15 +171,26 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
 #hero {
   min-height: 100vh;
   display: flex; align-items: center;
-  padding-top: 140px; padding-bottom: 100px;
+  padding-top: 180px; padding-bottom: 100px;
 }
 
-.hero-inner { max-width: 800px; }
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 46%),
+    linear-gradient(180deg, rgba(255,91,31,0.11) 0%, rgba(255,91,31,0.02) 100%),
+    #080808;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 26px;
+  padding: 56px 52px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+}
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--accent-dim);
-  border: 1px solid rgba(0,229,160,.22);
+  border: 1px solid rgba(255,91,31,.22);
   border-radius: 50px; padding: 6px 16px;
   font-size: 0.77rem; font-weight: 600;
   color: var(--accent); letter-spacing: 0.07em;
@@ -252,7 +272,7 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
   border-radius: var(--radius);
   padding: 36px 30px;
   position: relative; overflow: hidden;
-  transition: border-color .3s, transform .3s;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
 }
 .svc-card::before {
   content: '';
@@ -260,7 +280,11 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
   background: linear-gradient(90deg, var(--accent), var(--accent2));
   opacity: 0; transition: opacity .3s;
 }
-.svc-card:hover { border-color: rgba(0,229,160,.18); transform: translateY(-4px); }
+.svc-card:hover {
+  border-color: rgba(255,91,31,.28);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(0,0,0,.38);
+}
 .svc-card:hover::before { opacity: 1; }
 
 .svc-icon {
@@ -291,11 +315,11 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
 .work-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 20px; overflow: hidden;
+  border-radius: 24px; overflow: hidden;
   display: grid; grid-template-columns: 1fr 1fr;
   transition: border-color .3s;
 }
-.work-card:hover { border-color: rgba(0,229,160,.18); }
+.work-card:hover { border-color: rgba(255,91,31,.18); }
 
 .work-visual {
   position: relative; overflow: hidden; min-height: 340px;
@@ -313,8 +337,8 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
 }
 .work-badge {
   position: absolute; top: 18px; left: 18px;
-  background: rgba(0,229,160,.15);
-  border: 1px solid rgba(0,229,160,.4);
+  background: rgba(255,91,31,.15);
+  border: 1px solid rgba(255,91,31,.4);
   border-radius: 50px; padding: 5px 14px;
   font-size: 10px; font-weight: 700;
   letter-spacing: .12em; color: var(--accent);
@@ -334,7 +358,7 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
   letter-spacing: .1em; text-transform: uppercase;
   padding: 4px 12px; border-radius: 50px;
   margin-bottom: 16px;
-  border: 1px solid rgba(0,229,160,.2);
+  border: 1px solid rgba(255,91,31,.2);
 }
 
 .work-title {
@@ -352,8 +376,8 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
   content: '';
   width: 17px; height: 17px; min-width: 17px; margin-top: 1px;
   background: var(--accent-dim);
-  border: 1px solid rgba(0,229,160,.3); border-radius: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='3,8 6.5,11.5 13,5' stroke='%2300e5a0' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  border: 1px solid rgba(255,91,31,.3); border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='3,8 6.5,11.5 13,5' stroke='%23ff5b1f' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-size: 12px; background-repeat: no-repeat; background-position: center;
 }
 
@@ -361,7 +385,8 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
 
 .btn-live {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--accent); color: #000;
+  background: linear-gradient(135deg, var(--accent), #ff7a1f);
+  color: #fff;
   font-family: var(--font-b); font-size: 0.875rem; font-weight: 700;
   padding: 11px 22px; border-radius: 50px;
   transition: opacity .2s, transform .2s;
@@ -422,7 +447,7 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
   content: '';
   position: absolute; top: -60px; right: -60px;
   width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(0,229,160,.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,91,31,.08) 0%, transparent 70%);
 }
 
 .about-avatar {
@@ -446,7 +471,7 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
 .about-skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .skill-tag {
   background: var(--accent-dim);
-  border: 1px solid rgba(0,229,160,.18);
+  border: 1px solid rgba(255,91,31,.18);
   color: var(--gray2); border-radius: 50px;
   font-size: 0.75rem; font-weight: 500;
   padding: 4px 14px;
@@ -488,9 +513,10 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
 
 /* form card */
 .form-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,91,31,.08) 0%, rgba(255,91,31,0) 38%), var(--card);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 20px; padding: 40px 36px;
+  box-shadow: 0 24px 42px rgba(0,0,0,.3);
 }
 
 .form-title {
@@ -524,27 +550,73 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
 
 .field input:focus,
 .field textarea:focus {
-  border-color: rgba(0,229,160,.45);
-  box-shadow: 0 0 0 3px rgba(0,229,160,.08);
+  border-color: rgba(255,91,31,.45);
+  box-shadow: 0 0 0 3px rgba(255,91,31,.08);
+}
+
+.field input.invalid,
+.field textarea.invalid {
+  border-color: rgba(239,68,68,.7);
+  box-shadow: 0 0 0 3px rgba(239,68,68,.12);
 }
 
 .field textarea { height: 130px; }
 
+.field-error {
+  min-height: 18px;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: #fca5a5;
+}
+
 .form-submit {
   width: 100%; margin-top: 6px;
-  background: var(--accent); color: #000;
+  background: linear-gradient(135deg, var(--accent), #ff7a1f);
+  color: #fff;
   font-family: var(--font-b); font-size: 0.95rem; font-weight: 700;
   padding: 15px; border-radius: 50px;
   border: none; cursor: pointer;
   transition: opacity .2s, transform .2s, box-shadow .2s;
-  box-shadow: 0 0 24px rgba(0,229,160,.2);
+  box-shadow: 0 10px 24px rgba(255,91,31,.26);
   display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 .form-submit:hover {
   opacity: .87; transform: translateY(-2px);
-  box-shadow: 0 0 40px rgba(0,229,160,.35);
+  box-shadow: 0 16px 38px rgba(255,91,31,.35);
 }
 .form-submit:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+.submit-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: rgba(0, 0, 0, 0.85);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+  display: none;
+}
+
+.form-submit.loading .submit-spinner { display: inline-block; }
+.form-submit.loading .submit-icon { display: none; }
+
+.form-status {
+  min-height: 24px;
+  margin-top: 12px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--gray2);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.form-status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.success { color: var(--accent); }
+.form-status.error { color: #fca5a5; }
 
 /* toast */
 #toast {
@@ -557,7 +629,7 @@ section { position: relative; z-index: 1; padding: 110px 52px; }
   white-space: nowrap;
 }
 #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-#toast.success { background: var(--accent); color: #000; }
+#toast.success { background: var(--accent); color: #fff; }
 #toast.error   { background: var(--red); color: var(--white); }
 
 /* ═══════════════════════════════════════
@@ -597,6 +669,7 @@ footer {
   from { opacity:0; transform:translateY(26px); }
   to   { opacity:1; transform:translateY(0); }
 }
+@keyframes spin { to { transform: rotate(360deg); } }
 .fu  { animation: fadeUp .7s ease both; }
 .d1x { animation-delay: .06s; }
 .d2x { animation-delay: .18s; }
@@ -614,12 +687,18 @@ footer {
    RESPONSIVE
 ═══════════════════════════════════════ */
 @media (max-width: 900px) {
-  nav { padding: 0 24px; }
+  nav {
+    left: 14px; right: 14px;
+    margin-top: 10px;
+    padding: 0 18px;
+    max-width: none;
+  }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
 
   section { padding: 80px 24px; }
   #hero { padding-top: 120px; }
+  .hero-inner { padding: 36px 24px; border-radius: 20px; }
   .divider { margin: 0 24px; }
   footer { padding: 40px 24px 28px; }
 
@@ -865,27 +944,34 @@ footer {
       <!-- right form -->
       <div class="form-card reveal">
         <h3 class="form-title">Send me a message</h3>
-        <form id="contactForm" novalidate>
+        <form id="contactForm" action="https://formspree.io/f/xeepzrle" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Website Enquiry from mobashirali.in" />
+          <input type="hidden" name="_captcha" value="false" />
           <div class="form-row">
             <div class="field">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="John Smith" required />
+              <p class="field-error" id="nameError" aria-live="polite"></p>
             </div>
             <div class="field">
               <label for="email">Email Address</label>
               <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              <p class="field-error" id="emailError" aria-live="polite"></p>
             </div>
           </div>
           <div class="field">
             <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Tell me about your business and what you need..." required></textarea>
+            <p class="field-error" id="messageError" aria-live="polite"></p>
           </div>
-          <button type="submit" class="form-submit" id="submitBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <button type="submit" class="form-submit" id="submitBtn" aria-live="polite">
+            <svg class="submit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
             </svg>
-            Send Message
+            <span class="submit-spinner" aria-hidden="true"></span>
+            <span class="btn-label">Send Message</span>
           </button>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -928,7 +1014,7 @@ footer {
     const isOpen = links.style.display === 'flex';
     links.style.cssText = isOpen
       ? ''
-      : 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(11,12,14,0.97);padding:24px 24px 32px;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(16px);';
+      : 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(10,7,6,0.96);padding:24px 24px 32px;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(16px);';
   }
 
   /* ── Toast helper ── */
@@ -939,51 +1025,102 @@ footer {
     setTimeout(() => { t.className = ''; }, 4000);
   }
 
-  /* ── Contact form ── */
-  document.getElementById('contactForm').addEventListener('submit', async function (e) {
+  /* ── Contact form (Formspree) ── */
+  const contactForm = document.getElementById('contactForm');
+  const FORMSPREE_ENDPOINT = contactForm.getAttribute('action');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitLabel = submitBtn.querySelector('.btn-label');
+  const formStatus = document.getElementById('formStatus');
+
+  const fields = {
+    name: document.getElementById('name'),
+    email: document.getElementById('email'),
+    message: document.getElementById('message')
+  };
+
+  const errors = {
+    name: document.getElementById('nameError'),
+    email: document.getElementById('emailError'),
+    message: document.getElementById('messageError')
+  };
+
+  function setFieldError(fieldName, message = '') {
+    const input = fields[fieldName];
+    const errorText = errors[fieldName];
+    input.classList.toggle('invalid', Boolean(message));
+    errorText.textContent = message;
+  }
+
+  function validateField(fieldName) {
+    const value = fields[fieldName].value.trim();
+    if (!value) {
+      setFieldError(fieldName, 'This field is required.');
+      return false;
+    }
+
+    if (fieldName === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      setFieldError(fieldName, 'Please enter a valid email address.');
+      return false;
+    }
+
+    setFieldError(fieldName);
+    return true;
+  }
+
+  function setStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = `form-status show ${type}`;
+    showToast(message, type);
+  }
+
+  Object.keys(fields).forEach((fieldName) => {
+    fields[fieldName].addEventListener('input', () => {
+      if (fields[fieldName].classList.contains('invalid')) {
+        validateField(fieldName);
+      }
+    });
+  });
+
+  contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const btn     = document.getElementById('submitBtn');
-
-    // Basic validation
-    if (!name || !email || !message) {
-      showToast('Please fill in all fields.', 'error');
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showToast('Please enter a valid email.', 'error');
+    const valid = Object.keys(fields).every(validateField);
+    if (!valid) {
+      setStatus('Please complete all required fields.', 'error');
       return;
     }
 
-    // Loading state
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitBtn.setAttribute('aria-busy', 'true');
+    submitLabel.textContent = 'Sending...';
+    formStatus.className = 'form-status';
+    formStatus.textContent = '';
 
     try {
-      const response = await fetch('http://localhost:3000/send', {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
       });
 
       if (response.ok) {
-        showToast('Message sent successfully ✓', 'success');
-        document.getElementById('contactForm').reset();
+        contactForm.reset();
+        Object.keys(fields).forEach(name => setFieldError(name));
+        setStatus('Thanks! Your message has been sent successfully.', 'success');
       } else {
-        showToast('Failed to send message. Please try again.', 'error');
+        const payload = await response.json().catch(() => ({}));
+        const fallbackMessage = 'Something went wrong. Please try again in a moment.';
+        const apiError = payload?.errors?.[0]?.message || fallbackMessage;
+        setStatus(apiError, 'error');
       }
-    } catch (err) {
-      showToast('Failed to send message. Please try again.', 'error');
+    } catch (_) {
+      setStatus('Network error. Please check your connection and try again.', 'error');
     } finally {
-      btn.disabled = false;
-      btn.innerHTML = `
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-        </svg>
-        Send Message`;
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+      submitBtn.removeAttribute('aria-busy');
+      submitLabel.textContent = 'Send Message';
     }
   });
 </script>
