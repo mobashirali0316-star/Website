@@ -5,6 +5,7 @@ import { CALENDLY_URL, BRAND } from '../constants.js'
 const links = [
   { label: 'Services', href: '#services' },
   { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Demo', href: '#demo' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -54,7 +55,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNav(e, link.href)}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              className="nav-underline text-sm font-medium text-slate-300 transition-colors hover:text-white"
             >
               {link.label}
             </a>

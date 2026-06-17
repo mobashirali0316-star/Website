@@ -10,6 +10,7 @@ dist-ssr
 
 # Local-only
 .preview.log
+.npm-install.log
 .claude/settings.local.json
 npm-debug.log*
 yarn-debug.log*

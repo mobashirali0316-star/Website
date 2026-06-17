@@ -9,6 +9,8 @@
 
   body {
     @apply bg-ink-950 text-slate-200 font-sans antialiased;
+    background-color: #050510;
+    color: #ffffff;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -23,15 +25,41 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400;
   }
 
+  .text-secondary {
+    color: #a0a0b0;
+  }
+
+  /* Dark glass-morphism card */
   .glass {
-    background: rgba(255, 255, 255, 0.025);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .glow-ring {
-    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.25), 0 20px 60px -20px rgba(99, 102, 241, 0.45);
+    box-shadow: 0 0 0 1px rgba(108, 99, 255, 0.25), 0 20px 60px -20px rgba(108, 99, 255, 0.45);
+  }
+
+  /* Animated underline for nav links */
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1.5px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background: linear-gradient(to right, #6c63ff, #00d4ff);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nav-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }
 
@@ -40,12 +68,12 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #050507;
+  background: #050510;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f1f2b;
+  background: #1a1a2e;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a2a3a;
+  background: #26263f;
 }

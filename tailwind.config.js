@@ -5,15 +5,20 @@ export default {
     extend: {
       colors: {
         ink: {
-          950: '#050507',
-          900: '#0a0a0f',
-          800: '#101019',
-          700: '#16161f',
+          950: '#050510',
+          900: '#080814',
+          800: '#0d0d1c',
+          700: '#141426',
         },
         accent: {
-          DEFAULT: '#6366f1',
-          glow: '#818cf8',
+          DEFAULT: '#6C63FF',
+          glow: '#8b85ff',
         },
+        cyan: {
+          DEFAULT: '#00D4FF',
+          glow: '#5ce4ff',
+        },
+        muted: '#A0A0B0',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
