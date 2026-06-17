@@ -33,20 +33,20 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-ink-950/80 backdrop-blur-xl border-b border-white/5'
-          : 'bg-transparent border-b border-transparent'
+          ? 'border-b border-gold/10 bg-charcoal-950/80 backdrop-blur-xl'
+          : 'border-b border-transparent bg-transparent'
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8 md:h-20">
         <a
           href="#top"
           onClick={(e) => handleNav(e, 'body')}
-          className="group flex items-center gap-2 text-lg font-bold tracking-tight text-white"
+          className="group flex items-center gap-2.5 text-lg font-semibold tracking-tight text-cream"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent-glow to-accent text-sm font-black text-white shadow-lg shadow-accent/30">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-gold-light to-gold font-serif text-sm font-black text-charcoal-950 shadow-lg shadow-gold/20">
             M
           </span>
-          <span>{BRAND}</span>
+          <span className="font-serif">{BRAND}</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -55,7 +55,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNav(e, link.href)}
-              className="nav-underline text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              className="nav-underline text-sm font-medium text-sand transition-colors hover:text-cream"
             >
               {link.label}
             </a>
@@ -64,7 +64,7 @@ export default function Navbar() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-gradient-to-r from-accent-glow to-accent px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-transform hover:scale-[1.03]"
+            className="rounded-full bg-gradient-to-r from-gold-light to-gold px-5 py-2.5 text-sm font-semibold text-charcoal-950 shadow-lg shadow-gold/20 transition-transform hover:scale-[1.03]"
           >
             Book a Free Demo
           </a>
@@ -73,17 +73,17 @@ export default function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-lg text-white md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-lg text-cream md:hidden"
         >
           <div className="space-y-1.5">
             <span
-              className={`block h-0.5 w-6 bg-white transition-transform ${
+              className={`block h-0.5 w-6 bg-cream transition-transform ${
                 open ? 'translate-y-2 rotate-45' : ''
               }`}
             />
-            <span className={`block h-0.5 w-6 bg-white transition-opacity ${open ? 'opacity-0' : ''}`} />
+            <span className={`block h-0.5 w-6 bg-cream transition-opacity ${open ? 'opacity-0' : ''}`} />
             <span
-              className={`block h-0.5 w-6 bg-white transition-transform ${
+              className={`block h-0.5 w-6 bg-cream transition-transform ${
                 open ? '-translate-y-2 -rotate-45' : ''
               }`}
             />
@@ -98,7 +98,7 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-white/5 bg-ink-950/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-gold/10 bg-charcoal-950/95 backdrop-blur-xl md:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
               {links.map((link) => (
@@ -106,7 +106,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNav(e, link.href)}
-                  className="rounded-lg px-3 py-3 text-base font-medium text-slate-200 transition-colors hover:bg-white/5 hover:text-white"
+                  className="rounded-lg px-3 py-3 text-base font-medium text-sand transition-colors hover:bg-gold/5 hover:text-cream"
                 >
                   {link.label}
                 </a>
@@ -115,7 +115,7 @@ export default function Navbar() {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 rounded-full bg-gradient-to-r from-accent-glow to-accent px-5 py-3 text-center text-base font-semibold text-white"
+                className="mt-2 rounded-full bg-gradient-to-r from-gold-light to-gold px-5 py-3 text-center text-base font-semibold text-charcoal-950"
               >
                 Book a Free Demo
               </a>

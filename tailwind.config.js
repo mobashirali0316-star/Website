@@ -4,38 +4,50 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: {
-          950: '#050510',
-          900: '#080814',
-          800: '#0d0d1c',
-          700: '#141426',
+        // Warm near-black charcoals for a deep, cinematic base
+        charcoal: {
+          950: '#08080A',
+          900: '#0C0C0F',
+          850: '#111114',
+          800: '#16161B',
+          700: '#1E1E25',
+          600: '#2A2A33',
         },
-        accent: {
-          DEFAULT: '#6C63FF',
-          glow: '#8b85ff',
+        // Champagne / gold accent system
+        gold: {
+          DEFAULT: '#C6A05C',
+          light: '#E6CE96',
+          soft: '#D8B978',
+          deep: '#9A7B3F',
         },
-        cyan: {
-          DEFAULT: '#00D4FF',
-          glow: '#5ce4ff',
-        },
-        muted: '#A0A0B0',
+        cream: '#F4EFE3',
+        sand: '#A89F8E',
       },
       fontFamily: {
+        serif: ['"Playfair Display"', 'Georgia', 'ui-serif', 'serif'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      letterSpacing: {
+        luxe: '0.35em',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-16px)' },
         },
-        'gradient-shift': {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
       animation: {
-        float: 'float 8s ease-in-out infinite',
-        'gradient-shift': 'gradient-shift 12s ease infinite',
+        float: 'float 9s ease-in-out infinite',
+        shimmer: 'shimmer 6s linear infinite',
+        'fade-up': 'fade-up 0.9s cubic-bezier(0.22,1,0.36,1) both',
       },
     },
   },

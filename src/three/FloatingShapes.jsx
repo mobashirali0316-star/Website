@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Float } from '@react-three/drei'
 
-const COLORS = ['#6C63FF', '#00D4FF', '#4453ff']
+const COLORS = ['#C6A05C', '#E6CE96', '#9A7B3F']
 const TYPES = ['icosahedron', 'octahedron', 'torus']
 
 // Deterministic pseudo-random so the layout is stable between renders.
@@ -72,12 +72,15 @@ export default function FloatingShapes({ count = 13 }) {
     return arr
   }, [count])
 
-  // Subtle scroll parallax on the whole field.
-  useFrame(() => {
-    if (groupRef.current) {
-      const target = window.scrollY * 0.0016
-      groupRef.current.position.y += (target - groupRef.current.position.y) * 0.08
-    }
+  // Subtle scroll parallax + gentle mouse parallax on the whole field.
+  useFrame((state) => {
+    const g = groupRef.current
+    if (!g) return
+    const scrollTarget = window.scrollY * 0.0016
+    g.position.y += (scrollTarget - g.position.y) * 0.08
+    // Drift slightly toward the pointer for a premium, responsive feel.
+    g.rotation.y += (state.pointer.x * 0.12 - g.rotation.y) * 0.04
+    g.rotation.x += (-state.pointer.y * 0.08 - g.rotation.x) * 0.04
   })
 
   return (

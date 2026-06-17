@@ -30,8 +30,8 @@ export default function HowItWorks() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan">How It Works</p>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+          <p className="mb-4 text-xs font-medium uppercase tracking-luxe text-gold">How It Works</p>
+          <h2 className="font-serif text-3xl font-bold tracking-tight text-cream sm:text-4xl md:text-5xl">
             Up and running in three simple steps
           </h2>
         </motion.div>
@@ -45,7 +45,7 @@ export default function HowItWorks() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               style={{ transformOrigin: 'left' }}
-              className="h-px w-full bg-gradient-to-r from-accent via-cyan to-accent"
+              className="h-px w-full bg-gradient-to-r from-gold-deep via-gold-light to-gold-deep"
             />
           </div>
 
@@ -56,7 +56,7 @@ export default function HowItWorks() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             style={{ transformOrigin: 'top' }}
-            className="absolute bottom-24 left-1/2 top-4 w-px -translate-x-1/2 bg-gradient-to-b from-accent via-cyan to-accent md:hidden"
+            className="absolute bottom-24 left-1/2 top-4 w-px -translate-x-1/2 bg-gradient-to-b from-gold-deep via-gold-light to-gold-deep md:hidden"
           />
 
           <div className="grid gap-12 md:grid-cols-3 md:gap-8">
@@ -72,15 +72,15 @@ export default function HowItWorks() {
                   className="relative flex flex-col items-center text-center"
                 >
                   <div className="relative mb-6">
-                    <div className="grid h-[72px] w-[72px] place-items-center rounded-2xl border border-white/10 bg-ink-800 text-cyan shadow-xl shadow-black/40">
-                      <Icon className="h-8 w-8" strokeWidth={1.6} />
+                    <div className="grid h-[72px] w-[72px] place-items-center rounded-2xl border border-gold/15 bg-charcoal-800 text-gold-light shadow-xl shadow-black/40">
+                      <Icon className="h-8 w-8" strokeWidth={1.5} />
                     </div>
-                    <span className="absolute -right-2 -top-2 grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-accent-glow to-accent text-xs font-bold text-white shadow-lg shadow-accent/40">
+                    <span className="absolute -right-2 -top-2 grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-gold-light to-gold font-serif text-xs font-bold text-charcoal-950 shadow-lg shadow-gold/30">
                       {i + 1}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white">{step.title}</h3>
-                  <p className="mt-3 max-w-xs text-base leading-relaxed text-[#A0A0B0]">{step.description}</p>
+                  <h3 className="font-serif text-xl font-semibold text-cream">{step.title}</h3>
+                  <p className="mt-3 max-w-xs text-base leading-relaxed text-sand">{step.description}</p>
                 </motion.div>
               )
             })}

@@ -9,9 +9,9 @@ function makeGlowTexture() {
   canvas.width = canvas.height = size
   const ctx = canvas.getContext('2d')
   const g = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2)
-  g.addColorStop(0, 'rgba(255,255,255,1)')
-  g.addColorStop(0.25, 'rgba(180,210,255,0.85)')
-  g.addColorStop(1, 'rgba(120,140,255,0)')
+  g.addColorStop(0, 'rgba(255,250,240,1)')
+  g.addColorStop(0.25, 'rgba(230,206,150,0.85)')
+  g.addColorStop(1, 'rgba(198,160,92,0)')
   ctx.fillStyle = g
   ctx.fillRect(0, 0, size, size)
   const tex = new THREE.CanvasTexture(canvas)
@@ -19,8 +19,8 @@ function makeGlowTexture() {
   return tex
 }
 
-const PURPLE = new THREE.Color('#6C63FF')
-const CYAN = new THREE.Color('#00D4FF')
+const GOLD = new THREE.Color('#C6A05C')
+const GOLD_LIGHT = new THREE.Color('#E6CE96')
 
 export default function ParticleNetwork({ count = 70, bounds = [15, 8, 3], linkDist = 3.1 }) {
   const pointsRef = useRef()
@@ -43,7 +43,7 @@ export default function ParticleNetwork({ count = 70, bounds = [15, 8, 3], linkD
       velocities[i * 3] = (Math.random() * 2 - 1) * 0.18
       velocities[i * 3 + 1] = (Math.random() * 2 - 1) * 0.18
       velocities[i * 3 + 2] = (Math.random() * 2 - 1) * 0.1
-      const c = PURPLE.clone().lerp(CYAN, Math.random())
+      const c = GOLD.clone().lerp(GOLD_LIGHT, Math.random())
       colors[i * 3] = c.r
       colors[i * 3 + 1] = c.g
       colors[i * 3 + 2] = c.b
@@ -99,7 +99,7 @@ export default function ParticleNetwork({ count = 70, bounds = [15, 8, 3], linkD
         const dz = positions[ix + 2] - positions[jx + 2]
         const d = Math.sqrt(dx * dx + dy * dy + dz * dz)
         if (d < linkDist) {
-          const a = (1 - d / linkDist) * 0.6 // intensity → additive brightness
+          const a = (1 - d / linkDist) * 0.5 // intensity → additive brightness
           const o = seg * 6
           linePos[o] = positions[ix]
           linePos[o + 1] = positions[ix + 1]
@@ -107,13 +107,13 @@ export default function ParticleNetwork({ count = 70, bounds = [15, 8, 3], linkD
           linePos[o + 3] = positions[jx]
           linePos[o + 4] = positions[jx + 1]
           linePos[o + 5] = positions[jx + 2]
-          // Tint lines cyan→purple, scaled by closeness.
-          lineCol[o] = 0.42 * a
-          lineCol[o + 1] = 0.4 * a
-          lineCol[o + 2] = 1.0 * a
-          lineCol[o + 3] = 0.0
-          lineCol[o + 4] = 0.83 * a
-          lineCol[o + 5] = 1.0 * a
+          // Tint lines champagne gold, scaled by closeness.
+          lineCol[o] = 0.78 * a
+          lineCol[o + 1] = 0.63 * a
+          lineCol[o + 2] = 0.36 * a
+          lineCol[o + 3] = 0.9 * a
+          lineCol[o + 4] = 0.81 * a
+          lineCol[o + 5] = 0.59 * a
           seg++
         }
       }

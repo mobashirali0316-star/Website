@@ -26,7 +26,7 @@ export default function BackgroundCanvas() {
       gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
       frameloop={reduced ? 'demand' : 'always'}
     >
-      <fog attach="fog" args={['#050510', 12, 30]} />
+      <fog attach="fog" args={['#08080A', 12, 30]} />
       <Suspense fallback={null}>
         <ParticleNetwork count={particleCount} />
         <FloatingShapes count={shapeCount} />

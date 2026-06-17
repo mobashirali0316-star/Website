@@ -11,11 +11,11 @@ export default function DemoVideo() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan">Demo</p>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+          <p className="mb-4 text-xs font-medium uppercase tracking-luxe text-gold">Demo</p>
+          <h2 className="font-serif text-3xl font-bold tracking-tight text-cream sm:text-4xl md:text-5xl">
             See It In Action
           </h2>
-          <p className="mt-5 text-base text-[#A0A0B0] sm:text-lg">
+          <p className="mt-5 text-base text-sand sm:text-lg">
             Watch how our AI receptionist handles real calls and books appointments automatically.
           </p>
         </motion.div>

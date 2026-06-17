@@ -9,7 +9,7 @@ import Footer from './components/Footer.jsx'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-ink-950 text-white">
+    <div className="relative min-h-screen bg-charcoal-950 text-cream">
       <Background />
       <div className="relative z-10">
         <Navbar />
