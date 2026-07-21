@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mobashirali.in/sitemap.xml

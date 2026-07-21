@@ -1,71 +1,121 @@
 import { motion } from 'framer-motion'
-import { Headset, Globe } from 'lucide-react'
-
-const services = [
-  {
-    icon: Headset,
-    title: 'AI Receptionist',
-    description:
-      'Never miss a call or appointment again. Our AI handles patient calls, answers questions, and books appointments 24/7 — without hiring extra staff.',
-  },
-  {
-    icon: Globe,
-    title: 'Custom Websites',
-    description:
-      'Fast, modern websites built for local US businesses. Designed to convert visitors into customers — not just look good.',
-  },
-]
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 36 },
-  show: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] },
-  }),
-}
+import { CALENDLY_URL } from '../constants.js'
 
 export default function Services() {
   return (
-    <section id="services" className="relative px-5 py-24 sm:px-8 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <p className="mb-4 text-xs font-medium uppercase tracking-luxe text-gold">What We Build</p>
-          <h2 className="font-serif text-3xl font-bold tracking-tight text-cream sm:text-4xl md:text-5xl">
-            Two systems that run your business for you
+    <section id="services" className="bg-canvas py-24 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
+      <div className="w-full max-w-7xl">
+        {/* Section Title Block */}
+        <div className="mb-16 text-left">
+          <p className="typography-mono-eyebrow text-mute mb-3">// 01 / Core Capabilities</p>
+          <h2 className="font-sans typography-heading-lg text-ink font-semibold">
+            Two systems built to run your business for you
           </h2>
-        </motion.div>
+        </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
-          {services.map((service, i) => {
-            const Icon = service.icon
-            return (
-              <motion.article
-                key={service.title}
-                custom={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: '-60px' }}
-                className="group glass relative overflow-hidden rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/45 hover:shadow-[0_0_34px_-6px_rgba(198,160,92,0.35)] sm:p-10"
-              >
-                <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        {/* Features Card Grid */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {/* Card 1: AI Receptionist */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+            className="bg-canvas-elevated border border-hairline rounded-md p-6 md:p-8 whisper-shadow flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="typography-mono-eyebrow text-link bg-link-soft/40 px-2 py-0.5 rounded-sm">
+                  Active Agent
+                </span>
+                <span className="text-xs text-mute font-mono">receptionist.config.json</span>
+              </div>
+              <h3 className="typography-heading-md text-ink font-semibold mb-4">
+                AI Receptionist
+              </h3>
+              <p className="typography-body-md text-body mb-8">
+                Stop losing customers to voicemail. Our AI agent takes incoming calls, schedules patient bookings directly into CRM/Calendly, and triggers immediate SMS confirmation workflows — 24/7.
+              </p>
 
-                <div className="relative mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold/25 to-gold-deep/10 text-gold-light ring-1 ring-inset ring-gold/20">
-                  <Icon className="h-7 w-7" strokeWidth={1.5} />
+              {/* Code Illustration */}
+              <div className="bg-canvas border border-hairline rounded-md p-4 mb-8 font-mono text-xs text-body leading-relaxed">
+                <p className="text-pink">{"{"}</p>
+                <p className="pl-4"><span className="text-cyan">"name"</span>: <span className="text-link">"AI Patient Coordinator"</span>,</p>
+                <p className="pl-4"><span className="text-cyan">"voice"</span>: <span className="text-link">"neural-en-us"</span>,</p>
+                <p className="pl-4"><span className="text-cyan">"integrations"</span>: <span className="text-link">["Calendly", "HubSpot", "Zapier"]</span>,</p>
+                <p className="pl-4"><span className="text-cyan">"answeringRate"</span>: <span className="text-link">"100%"</span></p>
+                <p className="text-pink">{"}"}</p>
+              </div>
+            </div>
+
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-active-scale bg-canvas-elevated hover:bg-hairline-soft/80 text-ink border border-hairline typography-button-md rounded-sm py-2 text-center transition-colors font-medium w-full"
+            >
+              Test AI Flow
+            </a>
+          </motion.div>
+
+          {/* Card 2: Custom Websites */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
+            className="bg-canvas-elevated border border-hairline rounded-md p-6 md:p-8 whisper-shadow flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="typography-mono-eyebrow text-violet bg-violet-soft/30 px-2 py-0.5 rounded-sm">
+                  Web-Core
+                </span>
+                <span className="text-xs text-mute font-mono">lighthouse.metrics.log</span>
+              </div>
+              <h3 className="typography-heading-md text-ink font-semibold mb-4">
+                Custom Websites
+              </h3>
+              <p className="typography-body-md text-body mb-8">
+                Fast, responsive websites engineered with static rendering and optimal design structures. Built explicitly for dental clinics and local businesses to maximize customer conversions.
+              </p>
+
+              {/* Lighthouse illustration */}
+              <div className="border border-hairline rounded-md p-4 mb-8 bg-canvas flex flex-col gap-3 font-mono text-xs">
+                <div className="flex justify-between items-center text-mute border-b border-hairline pb-2">
+                  <span>Lighthouse Audit</span>
+                  <span className="text-green-600 font-bold">100% Passed</span>
                 </div>
+                <div className="grid grid-cols-4 gap-2 text-center pt-1">
+                  <div className="flex flex-col items-center">
+                    <span className="w-8 h-8 rounded-full border-2 border-green-500 text-green-600 font-bold flex items-center justify-center text-[10px]">100</span>
+                    <span className="text-[10px] text-mute mt-1.5 font-sans">Perf</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="w-8 h-8 rounded-full border-2 border-green-500 text-green-600 font-bold flex items-center justify-center text-[10px]">100</span>
+                    <span className="text-[10px] text-mute mt-1.5 font-sans">Access</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="w-8 h-8 rounded-full border-2 border-green-500 text-green-600 font-bold flex items-center justify-center text-[10px]">100</span>
+                    <span className="text-[10px] text-mute mt-1.5 font-sans">Best P.</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="w-8 h-8 rounded-full border-2 border-green-500 text-green-600 font-bold flex items-center justify-center text-[10px]">100</span>
+                    <span className="text-[10px] text-mute mt-1.5 font-sans">SEO</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <h3 className="relative font-serif text-2xl font-bold text-cream">{service.title}</h3>
-                <p className="relative mt-4 text-base leading-relaxed text-sand">{service.description}</p>
-              </motion.article>
-            )
-          })}
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-active-scale bg-canvas-elevated hover:bg-hairline-soft/80 text-ink border border-hairline typography-button-md rounded-sm py-2 text-center transition-colors font-medium w-full"
+            >
+              See Code Showcase
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

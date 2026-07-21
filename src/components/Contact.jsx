@@ -1,47 +1,65 @@
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import { CALENDLY_URL, EMAIL } from '../constants.js'
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative px-5 py-24 sm:px-8 md:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="contact" className="bg-canvas text-ink py-24 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
+      <div className="w-full max-w-4xl text-center flex flex-col items-center">
+        {/* Technical Eyebrow */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="glass glow-ring relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-12 md:py-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="typography-mono-eyebrow text-mute mb-5"
         >
-          {/* Ambient glows */}
-          <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-gold/20 blur-[120px]" />
-          <div className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-gold-deep/15 blur-[130px]" />
+          // GET IN TOUCH
+        </motion.div>
 
-          <h2 className="relative font-serif text-3xl font-bold tracking-tight text-cream sm:text-4xl md:text-5xl">
-            Ready to Automate Your Business?
-          </h2>
-          <p className="relative mx-auto mt-5 max-w-xl text-base text-sand sm:text-lg">
-            Book a free 20-minute demo call. No pressure, no contracts.
-          </p>
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          className="font-sans typography-heading-lg md:text-5xl text-ink font-semibold"
+        >
+          Ready to automate your business?
+        </motion.h2>
 
-          <div className="relative mt-10 flex flex-col items-center gap-6">
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-light to-gold px-10 py-5 text-lg font-semibold text-charcoal-950 shadow-2xl shadow-gold/25 transition-transform hover:scale-[1.04]"
-            >
-              Book a Free Demo
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
+        {/* Sub-text */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="typography-body-lg text-body max-w-xl mt-4"
+        >
+          Book a free 20-minute demo call. We will walk you through live custom integrations. No pressure, no contracts.
+        </motion.p>
 
-            <a
-              href={`mailto:${EMAIL}`}
-              className="text-sm font-medium text-sand transition-colors hover:text-cream"
-            >
-              {EMAIL}
-            </a>
-          </div>
+        {/* Pill Marketing CTA & Email link */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-8 flex flex-col items-center gap-6"
+        >
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-active-scale bg-primary hover:bg-ink/90 text-on-primary typography-button-lg rounded-pill px-8 py-3.5 shadow-sm transition-colors font-medium border border-primary"
+          >
+            Book a Free Demo
+          </a>
+
+          <a
+            href={`mailto:${EMAIL}`}
+            className="typography-body-md text-mute hover:text-ink transition-colors font-medium underline"
+          >
+            {EMAIL}
+          </a>
         </motion.div>
       </div>
     </section>

@@ -3,88 +3,72 @@ import { PhoneCall, Wrench, Coffee } from 'lucide-react'
 
 const steps = [
   {
-    icon: PhoneCall,
-    title: 'Book a Free Demo Call',
-    description: 'We understand your business needs in a quick 20-minute call.',
+    tag: 'STEP_01_INQUIRY',
+    title: 'Book Strategy Call',
+    description: 'We align on your specific business goals, custom integrations, and CRM endpoints in a quick 20-minute strategy call.',
+    code: 'curl -X GET https://api.mobashir.ali/strategy',
   },
   {
-    icon: Wrench,
-    title: 'We Build & Set Up',
-    description: 'Your AI receptionist or website is ready within days, fully configured.',
+    tag: 'STEP_02_INTEGRATE',
+    title: 'Build & Configure',
+    description: 'We code your website templates or hook up the AI agent to your phone lines and CRM. Deployed to staging within days.',
+    code: 'npm install @mobashir/ai-receptionist',
   },
   {
-    icon: Coffee,
-    title: 'You Sit Back',
-    description: 'Your system runs, books, and converts automatically around the clock.',
+    tag: 'STEP_03_DEPLOY',
+    title: 'Deploy & Run',
+    description: 'Your receptionist goes live to route booking schedules and answer customer calls automatically around the clock.',
+    code: 'vercel deploy --prod',
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative px-5 py-24 sm:px-8 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <p className="mb-4 text-xs font-medium uppercase tracking-luxe text-gold">How It Works</p>
-          <h2 className="font-serif text-3xl font-bold tracking-tight text-cream sm:text-4xl md:text-5xl">
+    <section id="how-it-works" className="bg-canvas py-24 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
+      <div className="w-full max-w-7xl">
+        {/* Header Block */}
+        <div className="mb-16 text-left">
+          <p className="typography-mono-eyebrow text-mute mb-3">// 02 / Integration Workflow</p>
+          <h2 className="font-sans typography-heading-lg text-ink font-semibold">
             Up and running in three simple steps
           </h2>
-        </motion.div>
+        </div>
 
-        <div className="relative mt-20">
-          {/* Desktop: horizontal line that draws across on scroll */}
-          <div className="absolute left-0 right-0 top-9 hidden px-[16%] md:block">
+        {/* Steps Grid */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {steps.map((step, i) => (
             <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              style={{ transformOrigin: 'left' }}
-              className="h-px w-full bg-gradient-to-r from-gold-deep via-gold-light to-gold-deep"
-            />
-          </div>
+              key={step.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 1, 0.5, 1] }}
+              className="bg-canvas-elevated border border-hairline rounded-md p-6 md:p-8 whisper-shadow flex flex-col justify-between"
+            >
+              <div>
+                {/* Tech Step Variable */}
+                <div className="flex justify-between items-center mb-6">
+                  <span className="typography-mono-eyebrow text-mute">
+                    {step.tag}
+                  </span>
+                  <span className="font-mono text-xs text-mute">0{i + 1}</span>
+                </div>
+                
+                <h3 className="typography-heading-md text-ink font-semibold mb-3">
+                  {step.title}
+                </h3>
+                <p className="typography-body-md text-body mb-6 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
 
-          {/* Mobile: vertical line that draws down on scroll */}
-          <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            style={{ transformOrigin: 'top' }}
-            className="absolute bottom-24 left-1/2 top-4 w-px -translate-x-1/2 bg-gradient-to-b from-gold-deep via-gold-light to-gold-deep md:hidden"
-          />
-
-          <div className="grid gap-12 md:grid-cols-3 md:gap-8">
-            {steps.map((step, i) => {
-              const Icon = step.icon
-              return (
-                <motion.div
-                  key={step.title}
-                  initial={{ opacity: 0, y: 36 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ duration: 0.7, delay: i * 0.18, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative flex flex-col items-center text-center"
-                >
-                  <div className="relative mb-6">
-                    <div className="grid h-[72px] w-[72px] place-items-center rounded-2xl border border-gold/15 bg-charcoal-800 text-gold-light shadow-xl shadow-black/40">
-                      <Icon className="h-8 w-8" strokeWidth={1.5} />
-                    </div>
-                    <span className="absolute -right-2 -top-2 grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-gold-light to-gold font-serif text-xs font-bold text-charcoal-950 shadow-lg shadow-gold/30">
-                      {i + 1}
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-xl font-semibold text-cream">{step.title}</h3>
-                  <p className="mt-3 max-w-xs text-base leading-relaxed text-sand">{step.description}</p>
-                </motion.div>
-              )
-            })}
-          </div>
+              {/* Simulated Terminal command */}
+              <div className="bg-canvas border border-hairline rounded-sm p-3 font-mono text-[11px] text-mute flex items-center justify-between mt-auto">
+                <span className="truncate">{step.code}</span>
+                <span className="text-[9px] text-link cursor-pointer hover:underline ml-2">COPY</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

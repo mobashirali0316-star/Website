@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Float } from '@react-three/drei'
 
-const COLORS = ['#C6A05C', '#E6CE96', '#9A7B3F']
+const COLORS = ['#6C63FF', '#00D4FF', '#4B47B3']
 const TYPES = ['icosahedron', 'octahedron', 'torus']
 
 // Deterministic pseudo-random so the layout is stable between renders.

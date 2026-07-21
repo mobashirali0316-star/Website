@@ -8,91 +8,128 @@
   }
 
   body {
-    @apply bg-charcoal-950 font-sans antialiased;
-    background-color: #08080a;
-    color: #f4efe3;
+    @apply bg-canvas text-body font-sans antialiased;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: rgba(198, 160, 92, 0.3);
-    color: #f4efe3;
+    background: #d3e5ff; /* Vercel link-soft */
+    color: #0761d1; /* Vercel link-deep */
   }
 }
 
 @layer utilities {
-  .font-serif {
-    font-family: 'Playfair Display', Georgia, ui-serif, serif;
+  /* Typography rules from Vercel analysis */
+  .typography-display-xl {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -2.4px;
   }
 
-  .text-secondary {
-    color: #a89f8e;
+  .typography-heading-lg {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -1.28px;
   }
 
-  /* Champagne gradient text */
-  .text-gold-gradient {
-    background-image: linear-gradient(to right, #e6ce96, #c6a05c, #9a7b3f);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .typography-heading-md {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.4px;
   }
 
-  /* Shimmering champagne text */
-  .text-shimmer {
-    background-image: linear-gradient(100deg, #c6a05c 20%, #f4efe3 40%, #e6ce96 60%, #c6a05c 80%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shimmer 6s linear infinite;
+  .typography-label-sm {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.28px;
   }
 
-  /* Dark glass-morphism card */
-  .glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(214, 185, 120, 0.14);
+  .typography-mono-eyebrow {
+    font-family: theme('fontFamily.mono');
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
-  .glow-ring {
-    box-shadow: 0 0 0 1px rgba(198, 160, 92, 0.28), 0 24px 70px -24px rgba(198, 160, 92, 0.4);
+  .typography-body-lg {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
   }
 
-  /* Animated underline for nav links */
-  .nav-underline {
-    position: relative;
+  .typography-body-md {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
   }
-  .nav-underline::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    height: 1.5px;
-    width: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
-    background: linear-gradient(to right, #e6ce96, #c6a05c);
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+  .typography-body-sm {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0;
   }
-  .nav-underline:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+
+  .typography-code {
+    font-family: theme('fontFamily.mono');
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  /* Geist Shadows */
+  .whisper-shadow {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.04);
+  }
+
+  .floating-shadow {
+    box-shadow: 
+      0px 2px 2px rgba(0, 0, 0, 0.02), 
+      0px 8px 16px -4px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Geist Mesh Gradient for Hero Background */
+  .geist-mesh-gradient {
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(80, 227, 194, 0.12) 0px, transparent 50%), /* Cyan */
+      radial-gradient(at 50% 0%, rgba(0, 112, 243, 0.10) 0px, transparent 50%), /* Blue */
+      radial-gradient(at 100% 0%, rgba(121, 40, 202, 0.12) 0px, transparent 50%), /* Violet */
+      radial-gradient(at 80% 50%, rgba(255, 0, 128, 0.06) 0px, transparent 40%), /* Pink */
+      radial-gradient(at 20% 80%, rgba(245, 166, 35, 0.06) 0px, transparent 40%); /* Amber */
+  }
+
+  /* Active press interaction state */
+  .btn-active-scale {
+    transition: transform 0.1s ease;
+  }
+  .btn-active-scale:active {
+    transform: scale(0.98);
   }
 }
 
-/* Slim, dark scrollbar */
+/* Grayscale scrollbars */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #08080a;
+  background: #fafafa;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2a33;
+  background: #ebebeb;
   border-radius: 9999px;
+  border: 2px solid #fafafa;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9a7b3f;
+  background: #a1a1a1;
 }

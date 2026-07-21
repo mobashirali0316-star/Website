@@ -1,94 +1,122 @@
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import { CALENDLY_URL } from '../constants.js'
 
-const container = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-}
-
 export default function Hero() {
-  const scrollTo = (e, href) => {
+  const handleScrollTo = (e, id) => {
     e.preventDefault()
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    const el = document.querySelector(id)
+    if (el) {
+      const offset = 64
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY
+      const offsetPosition = elementPosition - offset
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+    }
   }
 
   return (
-    <section id="top" className="relative flex min-h-screen items-center justify-center px-5 pt-24 sm:px-8">
-      {/* Soft vignette that fades the 3D field into the page below */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-b from-transparent to-charcoal-950" />
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center"
-      >
+    <section className="relative bg-canvas text-ink pt-32 pb-24 px-6 md:px-8 overflow-hidden flex flex-col items-center geist-mesh-gradient border-b border-hairline">
+      <div className="mx-auto max-w-4xl flex flex-col items-center text-center">
+        {/* Technical Eyebrow */}
         <motion.div
-          variants={item}
-          className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-gold/20 bg-gold/5 px-4 py-1.5 text-[11px] font-medium uppercase tracking-luxe text-gold-light backdrop-blur"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="typography-mono-eyebrow text-mute mb-5 flex items-center gap-2"
         >
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-gold" />
-          </span>
-          AI automation for US businesses
+          <span>//</span>
+          <span>US Business Automation Platform</span>
         </motion.div>
 
+        {/* Display Title */}
         <motion.h1
-          variants={item}
-          className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-cream sm:text-6xl md:text-7xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+          className="font-sans typography-display-xl md:text-6xl text-ink font-semibold"
         >
-          Your Business,{' '}
-          <span className="text-shimmer italic">Running on Autopilot</span>
+          Your Business, <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-mute font-bold">
+            Running on Autopilot
+          </span>
         </motion.h1>
 
+        {/* Sub-heading */}
         <motion.p
-          variants={item}
-          className="mt-7 max-w-2xl text-pretty text-base text-sand sm:text-lg md:text-xl"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+          className="mt-6 max-w-2xl text-body typography-body-lg text-base md:text-lg"
         >
-          AI Receptionist and custom websites that work while you sleep — built for US businesses.
+          AI Receptionist and custom websites that work while you sleep — built for US dental clinics and local businesses.
         </motion.p>
 
-        <motion.div variants={item} className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+        {/* Pill Marketing CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
+          className="mt-8 flex flex-col sm:flex-row gap-4 items-center"
+        >
           <a
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-gold-light to-gold px-8 py-4 text-base font-semibold text-charcoal-950 shadow-xl shadow-gold/25 transition-transform hover:scale-[1.03] sm:w-auto"
+            className="btn-active-scale bg-primary hover:bg-ink/90 text-on-primary typography-button-lg rounded-pill px-8 py-3.5 transition-colors w-full sm:w-auto font-medium"
           >
             Book a Free Demo
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a
             href="#how-it-works"
-            onClick={(e) => scrollTo(e, '#how-it-works')}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold/25 bg-white/5 px-8 py-4 text-base font-semibold text-cream backdrop-blur transition-colors hover:border-gold/50 hover:bg-gold/10 sm:w-auto"
+            onClick={(e) => handleScrollTo(e, '#how-it-works')}
+            className="btn-active-scale bg-canvas-elevated hover:bg-hairline-soft/80 text-ink border border-hairline typography-button-lg rounded-pill px-8 py-3.5 transition-colors w-full sm:w-auto font-medium"
           >
             See How It Works
           </a>
         </motion.div>
-      </motion.div>
+      </div>
 
+      {/* Elevated Terminal / Dashboard illustration showing live AI Logs */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 sm:block"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
+        className="w-full max-w-2xl mt-16 bg-canvas-elevated border border-hairline rounded-md floating-shadow overflow-hidden flex flex-col text-left font-mono"
       >
-        <div className="flex h-9 w-5 items-start justify-center rounded-full border border-gold/25 p-1.5">
-          <motion.span
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-            className="block h-1.5 w-1 rounded-full bg-gold/70"
-          />
+        {/* Dashboard Header Bar */}
+        <div className="h-10 bg-canvas border-b border-hairline flex items-center justify-between px-4">
+          <div className="flex items-center gap-1.5">
+            <span className="w-3 h-3 rounded-full bg-red-500/80" />
+            <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
+            <span className="w-3 h-3 rounded-full bg-green-500/80" />
+            <span className="ml-2 text-xs text-mute font-sans tracking-wide">// AI-GATEWAY-CONSOLE</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-link animate-pulse" />
+            <span className="text-xs text-mute font-sans">LIVE</span>
+          </div>
+        </div>
+
+        {/* Console Logs */}
+        <div className="p-5 text-xs md:text-sm space-y-4 text-ink overflow-x-auto">
+          <div>
+            <span className="text-link">mobashir-ali-site ~ </span>
+            <span className="text-mute">npm run start:receptionist</span>
+          </div>
+          <div className="text-mute border-l-2 border-hairline pl-3 space-y-2">
+            <p className="text-ink">// Agent deployed to USA East Node (12 ms latency)</p>
+            <p>Ready to route patient calendar bookings...</p>
+            <p className="text-ink font-semibold">Incoming Call: +1 (312) 809-9021 [Dentist Inquiry]</p>
+            <p className="text-link">↳ Intent Detected: Schedule Root Canal</p>
+            <p className="text-ink">↳ Action: Sync with Calendly CRM (Dr. Jenkins Practice)</p>
+            <p className="text-green-600 font-bold">↳ Status: 200 OK (Appointment Booked & Confirmed)</p>
+          </div>
+          <div className="border-t border-hairline pt-3 text-mute">
+            <span className="text-link">mobashir-ali-site ~ </span>
+            <span className="text-mute font-bold">System Status: Active (143 calls handled today, 0 missed)</span>
+          </div>
         </div>
       </motion.div>
     </section>
