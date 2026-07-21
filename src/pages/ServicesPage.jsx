@@ -76,13 +76,49 @@ export default function ServicesPage() {
             </div>
           </div>
 
+          {/* Interactive Demo Video Walkthrough */}
+          <div className="mt-16 bg-canvas-elevated border border-hairline rounded-md p-6 md:p-8 whisper-shadow">
+            <span className="typography-mono-eyebrow text-mute">// LIVE DEMO</span>
+            <h2 className="typography-heading-md text-ink font-semibold mt-2 mb-4">AI Receptionist Demonstration</h2>
+            <p className="typography-body-md text-body mb-8 max-w-2xl">
+              Watch how the voice agent answers customer calls, handles dental clinic bookings, and syncs calendar entries automatically in this 3-minute video walkthrough.
+            </p>
+            
+            {/* Browser Mockup */}
+            <div className="bg-canvas border border-hairline rounded-md overflow-hidden floating-shadow mx-auto max-w-[760px]">
+              <div className="h-10 bg-canvas-elevated border-b border-hairline flex items-center px-4 justify-between">
+                <div className="flex items-center gap-1.5 w-1/4">
+                  <span className="w-2 h-2 rounded-full bg-red-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                </div>
+                
+                <div className="bg-canvas border border-hairline rounded-sm text-[10px] text-mute font-mono px-3 py-1 w-2/4 text-center select-none truncate">
+                  https://api.mobashir.ali/demo_receptionist
+                </div>
+                
+                <div className="w-1/4" />
+              </div>
+
+              {/* Loom Video Frame */}
+              <div className="relative h-0 w-full overflow-hidden" style={{ paddingBottom: '64.98%' }}>
+                <iframe
+                  src="https://www.loom.com/embed/c50c653d691f40cf863b8737ea336789"
+                  title="Mobashir Ali — AI Receptionist demo"
+                  allowFullScreen
+                  className="absolute left-0 top-0 h-full w-full border-0"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Quick CTA */}
           <div className="mt-16 text-center">
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-active-scale bg-primary hover:bg-ink/90 text-on-primary typography-button-lg rounded-pill px-8 py-3.5 transition-colors font-medium inline-block"
+              className="btn-active-scale bg-primary hover:bg-ink/90 text-on-primary typography-button-lg rounded-pill px-8 py-3.5 transition-colors font-medium inline-block border border-primary"
             >
               Book a Setup Demo
             </a>
