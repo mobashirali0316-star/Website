@@ -47,10 +47,8 @@ export default function Navbar() {
           onClick={() => setMobileOpen(false)}
           className="flex items-center gap-2.5 text-[16px] font-semibold tracking-[-0.4px] text-ink hover:opacity-80 transition-opacity"
         >
-          {/* Vercel Triangle Monogram */}
-          <svg className="w-[18px] h-[16px] fill-current" viewBox="0 0 116 100">
-            <path fillRule="evenodd" clipRule="evenodd" d="M57.5 0L115 100H0L57.5 0Z" />
-          </svg>
+          {/* Custom brand logo from public folder */}
+          <img src="/favicon.svg" alt="Mobashir Ali Logo" className="w-[18px] h-[18px] object-contain" />
           <span className="font-semibold uppercase tracking-tight">{BRAND}</span>
         </Link>
 
