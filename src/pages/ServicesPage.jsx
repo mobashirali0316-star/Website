@@ -109,6 +109,65 @@ export default function ServicesPage() {
             </div>
           </div>
 
+          {/* Deep Dive SEO Optimization Copy Section */}
+          <div className="mt-20 border-t border-hairline pt-16">
+            <span className="typography-mono-eyebrow text-mute">// DEEP DIVE & SEO</span>
+            <h2 className="font-sans typography-heading-lg text-ink font-semibold mt-3 mb-8">
+              Why Local Businesses are Migrating to Voice AI and Hand-Coded Web Systems
+            </h2>
+            
+            <div className="grid gap-8 md:grid-cols-2 typography-body-md text-body leading-relaxed font-sans text-left">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="typography-label-md text-ink font-semibold mb-2">
+                    What is an AI Receptionist & What Bottleneck Does It Solve?
+                  </h3>
+                  <p>
+                    For service firms, every missed call is directly equal to missed revenue. When dental clinics, law practices, or local contractors are in appointments or busy handling operations, incoming calls routinely go to voicemail. Statistics show that over 60% of callers hang up rather than leave a message.
+                  </p>
+                  <p className="mt-3">
+                    Deploying an <strong className="text-ink">AI receptionist for small business</strong> transforms this bottleneck. Acting as a <strong className="text-ink">24/7 call answering service</strong>, the conversational voice agent answers calls immediately with zero latency. It speaks in a natural, warm, custom voice, explains your capabilities/FAQs, and captures customer contact logs. Callers get immediate attention, preventing them from dialing your local competitors.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="typography-label-md text-ink font-semibold mb-2">
+                    Seamless Integrations with Scheduling & CRMs
+                  </h3>
+                  <p>
+                    A voice answering service is only useful if it integrates with your daily schedule. Our voice agents don't just speak—they act. By syncing directly via APIs into tools like Calendly, Acuity, or custom clinic management platforms, the AI checks open slots on your live calendar, shares availability options with the caller, books their selection, and updates your CRM instantly.
+                  </p>
+                  <p className="mt-3">
+                    After the appointment is synced, the system automatically fires off a confirmation SMS alert containing booking details and rescheduling links. This ensures your desk staff lands at the office with a fully synced, confirmed calendar of bookings without lifting a finger.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="typography-label-md text-ink font-semibold mb-2">
+                    What "Custom Website" Truly Means for Speed and SEO
+                  </h3>
+                  <p>
+                    Most agency websites rely on heavy builders (like WordPress, Elementor, Wix, or Squarespace) loaded down with third-party plugins. While easy to drag and drop, these architectures create heavy load delays, causing visitors to bounce and lowering your rankings on search engines.
+                  </p>
+                  <p className="mt-3">
+                    When we build a <strong className="text-ink">custom website for local business</strong>, we hand-code the site layout from scratch using lightweight, static React frameworks. By removing database roundtrips and compiling the site to flat assets, pages load instantly (under 1 second). This gives you perfect Google Lighthouse scores (99+/100) and native local SEO optimization built into the semantic HTML markup, ensuring search engine indexing crawlers rank your practice higher.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="typography-label-md text-ink font-semibold mb-2">
+                    Who Is This Solution Designed For?
+                  </h3>
+                  <p>
+                    These integrations are built explicitly for local service offices and solo practitioners. Dental clinics, legal practices, medical specialists, real estate brokerages, and local trades rely heavily on phone inquiries to grow. If your daily operations suffer from staff scheduling overhead or missed lead calls, migrating to automated answering agents and a high-performance custom website is the fastest way to scale conversions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Quick CTA */}
           <div className="mt-16 text-center">
             <a

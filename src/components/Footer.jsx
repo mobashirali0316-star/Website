@@ -21,6 +21,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/faq" className="typography-body-md text-body hover:text-ink transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
                 <Link to="/about" className="typography-body-md text-body hover:text-ink transition-colors">
                   About
                 </Link>
@@ -68,8 +73,8 @@ export default function Footer() {
           </div>
           
           <div className="flex flex-wrap gap-x-6 gap-y-2 typography-body-sm">
-            <span className="hover:text-ink cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-ink cursor-pointer transition-colors">Terms of Use</span>
+            <Link to="/privacy-policy" className="hover:text-ink transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-ink transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>

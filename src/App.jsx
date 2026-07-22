@@ -11,6 +11,9 @@ import About from './pages/About.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import NotFound from './pages/NotFound.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'
+import FAQ from './pages/FAQ.jsx'
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import Terms from './pages/Terms.jsx'
 
 export default function App() {
   return (
@@ -25,6 +28,9 @@ export default function App() {
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="/500" element={<ErrorPage code={500} />} />
               <Route path="/505" element={<ErrorPage code={505} />} />
               <Route path="*" element={<NotFound />} />

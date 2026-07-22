@@ -6,6 +6,7 @@ import { CALENDLY_URL, BRAND } from '../constants.js'
 const links = [
   { label: 'Services', to: '/services' },
   { label: 'Portfolio', to: '/portfolio' },
+  { label: 'FAQ', to: '/faq' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ]
