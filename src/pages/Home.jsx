@@ -104,6 +104,11 @@ export default function Home() {
                 <polyline points="9 18 15 12 9 6" />
               </svg>
             </div>
+            <div className="flex md:hidden flex-col items-center justify-center text-mute select-none py-1 animate-pulse">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
 
             {/* Node 2: AI Voice Router */}
             <div className="w-full md:w-1/3 bg-canvas border border-hairline rounded-sm p-5 whisper-shadow text-center flex flex-col items-center">
@@ -124,6 +129,11 @@ export default function Home() {
             <div className="hidden md:flex flex-col items-center justify-center text-mute select-none px-2">
               <svg className="w-6 h-6 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+            <div className="flex md:hidden flex-col items-center justify-center text-mute select-none py-1 animate-pulse">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="6 9 12 15 18 9" />
               </svg>
             </div>
 

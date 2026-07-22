@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CALENDLY_URL, BRAND } from '../constants.js'
@@ -12,6 +12,30 @@ const links = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme') || 'dark'
+    if (saved === 'light') {
+      document.documentElement.classList.add('light')
+      setTheme('light')
+    } else {
+      document.documentElement.classList.remove('light')
+      setTheme('dark')
+    }
+  }, [])
+
+  const toggleTheme = () => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('light')
+      localStorage.setItem('theme', 'light')
+      setTheme('light')
+    } else {
+      document.documentElement.classList.remove('light')
+      localStorage.setItem('theme', 'dark')
+      setTheme('dark')
+    }
+  }
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-16 bg-canvas border-b border-hairline font-sans flex items-center">
@@ -42,13 +66,30 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right Action Button */}
-        <div className="flex items-center gap-4">
+        {/* Right Action Button & Theme Toggle */}
+        <div className="flex items-center gap-3 md:gap-4">
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle dark/light theme"
+            className="btn-active-scale w-8 h-8 rounded-full border border-hairline bg-canvas-elevated hover:bg-hairline-soft/80 flex items-center justify-center text-ink transition-colors"
+          >
+            {theme === 'dark' ? (
+              <svg className="w-[16px] h-[16px] stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+              </svg>
+            ) : (
+              <svg className="w-[16px] h-[16px] stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+            )}
+          </button>
+
           <a
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-active-scale bg-primary hover:bg-ink/90 text-on-primary typography-button-md rounded-sm px-3.5 py-1.5 transition-colors font-medium border border-primary"
+            className="btn-active-scale bg-primary hover:bg-ink/90 text-on-primary typography-button-md rounded-sm px-3.5 py-1.5 transition-colors font-medium border border-primary hidden sm:inline-block"
           >
             Book Demo
           </a>

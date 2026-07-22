@@ -10,6 +10,7 @@ import Portfolio from './pages/Portfolio.jsx'
 import About from './pages/About.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import NotFound from './pages/NotFound.jsx'
+import ErrorPage from './pages/ErrorPage.jsx'
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/500" element={<ErrorPage code={500} />} />
+              <Route path="/505" element={<ErrorPage code={505} />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

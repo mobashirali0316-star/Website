@@ -3,6 +3,50 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --primary: #ffffff;
+    --on-primary: #000000;
+    --ink: #ffffff;
+    --body: #a0a0a0;
+    --mute: #666666;
+    --faint: #333333;
+    --hairline: #222222;
+    --hairline-soft: #111111;
+    --canvas: #000000;
+    --canvas-elevated: #0a0a0a;
+    --link: #3291ff;
+    --link-deep: #0070f3;
+    --link-soft: rgba(0, 112, 243, 0.15);
+
+    --selection-bg: #002d64;
+    --selection-color: #3291ff;
+    --scrollbar-track: #000000;
+    --scrollbar-thumb: #222222;
+    --scrollbar-thumb-hover: #444444;
+  }
+
+  .light {
+    --primary: #171717;
+    --on-primary: #ffffff;
+    --ink: #171717;
+    --body: #4d4d4d;
+    --mute: #8f8f8f;
+    --faint: #a1a1a1;
+    --hairline: #ebebeb;
+    --hairline-soft: #f2f2f2;
+    --canvas: #fafafa;
+    --canvas-elevated: #ffffff;
+    --link: #0070f3;
+    --link-deep: #0761d1;
+    --link-soft: #d3e5ff;
+
+    --selection-bg: #d3e5ff;
+    --selection-color: #0761d1;
+    --scrollbar-track: #fafafa;
+    --scrollbar-thumb: #ebebeb;
+    --scrollbar-thumb-hover: #a1a1a1;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -14,8 +58,8 @@
   }
 
   ::selection {
-    background: #002d64; /* Vercel dark link-soft */
-    color: #3291ff; /* Vercel dark link-deep */
+    background: var(--selection-bg);
+    color: var(--selection-color);
   }
 }
 
@@ -123,13 +167,13 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #222222;
+  background: var(--scrollbar-thumb);
   border-radius: 9999px;
-  border: 2px solid #000000;
+  border: 2px solid var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #444444;
+  background: var(--scrollbar-thumb-hover);
 }
