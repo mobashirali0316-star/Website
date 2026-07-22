@@ -64,36 +64,83 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Live console logs block */}
+        {/* Visual System Flowchart Diagram */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
-          className="w-full max-w-2xl mt-16 bg-canvas-elevated border border-hairline rounded-md floating-shadow overflow-hidden flex flex-col text-left font-mono"
+          className="w-full max-w-3xl mt-16 bg-canvas-elevated border border-hairline rounded-md floating-shadow overflow-hidden flex flex-col text-left"
         >
+          {/* Header Panel */}
           <div className="h-10 bg-canvas border-b border-hairline flex items-center justify-between px-4">
             <div className="flex items-center gap-1.5">
-              <span className="w-3 h-3 rounded-full bg-red-500/80" />
-              <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <span className="w-3 h-3 rounded-full bg-green-500/80" />
-              <span className="ml-2 text-xs text-mute font-sans tracking-wide">// AI-GATEWAY-CONSOLE</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-mute" />
+              <span className="text-xs text-mute font-mono tracking-wide uppercase">// AUTOMATION FLOWPIPELINE</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-link animate-pulse" />
-              <span className="text-xs text-mute font-sans">LIVE</span>
-            </div>
+            <span className="text-xs text-link font-mono flex items-center gap-1">
+              <span className="w-1.5 h-1.5 bg-link rounded-full animate-ping" />
+              ACTIVE SYSTEM
+            </span>
           </div>
 
-          <div className="p-5 text-xs md:text-sm space-y-4 text-ink overflow-x-auto">
-            <div>
-              <span className="text-link">mobashir-ali-site ~ </span>
-              <span className="text-mute">npm run start:receptionist</span>
+          {/* Flowchart Nodes */}
+          <div className="p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 bg-canvas-elevated">
+            {/* Node 1: Customer Call */}
+            <div className="w-full md:w-1/3 bg-canvas border border-hairline rounded-sm p-5 whisper-shadow text-center flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-hairline-soft border border-hairline flex items-center justify-center text-ink mb-3">
+                <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <h4 className="typography-label-sm text-ink font-semibold mb-1">1. Customer Call</h4>
+              <p className="text-xs text-mute font-sans leading-relaxed">
+                Patient calls practice phone lines. Caught instantly by AI.
+              </p>
             </div>
-            <div className="text-mute border-l-2 border-hairline pl-3 space-y-2">
-              <p className="text-ink">// Deployed AI Receptionist endpoint</p>
-              <p className="text-ink font-semibold">Incoming Call: +1 (312) 809-9021 [Inquiry]</p>
-              <p className="text-link">↳ Intent: Book Appointment (Dr. Jenkins Practice)</p>
-              <p className="text-green-600 font-bold">↳ Status: 200 OK (Appointment Synced)</p>
+
+            {/* Connection Arrow 1 */}
+            <div className="hidden md:flex flex-col items-center justify-center text-mute select-none px-2">
+              <svg className="w-6 h-6 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+
+            {/* Node 2: AI Voice Router */}
+            <div className="w-full md:w-1/3 bg-canvas border border-hairline rounded-sm p-5 whisper-shadow text-center flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-link-soft/20 border border-hairline flex items-center justify-center text-link mb-3">
+                <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="22" />
+                </svg>
+              </div>
+              <h4 className="typography-label-sm text-ink font-semibold mb-1">2. AI Voice Assistant</h4>
+              <p className="text-xs text-mute font-sans leading-relaxed">
+                Processes questions and intent using low-latency LLMs.
+              </p>
+            </div>
+
+            {/* Connection Arrow 2 */}
+            <div className="hidden md:flex flex-col items-center justify-center text-mute select-none px-2">
+              <svg className="w-6 h-6 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+
+            {/* Node 3: Calendar Sync */}
+            <div className="w-full md:w-1/3 bg-canvas border border-hairline rounded-sm p-5 whisper-shadow text-center flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-hairline-soft border border-hairline flex items-center justify-center text-green-500 mb-3">
+                <svg className="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </div>
+              <h4 className="typography-label-sm text-ink font-semibold mb-1">3. Automated Sync</h4>
+              <p className="text-xs text-mute font-sans leading-relaxed">
+                Books appointment directly to calendar and triggers SMS alerts.
+              </p>
             </div>
           </div>
         </motion.div>
