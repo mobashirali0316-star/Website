@@ -100,15 +100,22 @@ export default function ServicesPage() {
                 <div className="w-1/4" />
               </div>
 
-              {/* Loom Video Frame */}
-              <div className="relative h-0 w-full overflow-hidden" style={{ paddingBottom: '64.98%' }}>
-                <iframe
-                  src="https://www.loom.com/embed/c50c653d691f40cf863b8737ea336789"
-                  title="Mobashir Ali — AI Receptionist demo"
-                  allowFullScreen
-                  className="absolute left-0 top-0 h-full w-full border-0"
-                />
-              </div>
+               {/* Loom Video Frame */}
+               <div className="relative h-0 w-full overflow-hidden" style={{ paddingBottom: '64.98194945848375%' }}>
+                 <iframe
+                   src="https://www.loom.com/embed/c50c653d691f40cf863b8737ea336789"
+                   frameBorder="0"
+                   // React supports these standard and custom attributes for iframe:
+                   allowFullScreen
+                   // Webkit and Mozilla fullscreen attributes
+                   {...{
+                     webkitallowfullscreen: "true",
+                     mozallowfullscreen: "true"
+                   }}
+                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                   className="border-0"
+                 />
+               </div>
             </div>
           </div>
 
