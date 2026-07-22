@@ -99,6 +99,39 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* VIDEO DEMO SECTION */}
+      <section className="bg-canvas py-20 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
+        <div className="w-full max-w-4xl text-center">
+          <p className="typography-mono-eyebrow text-mute mb-3">// Demonstration</p>
+          <h2 className="font-sans typography-heading-lg text-ink font-semibold mb-6">
+            See the AI receptionist in action
+          </h2>
+          <p className="typography-body-md text-body mb-10 max-w-xl mx-auto leading-relaxed">
+            Watch this quick walkthrough to see how the voice agent answers customer calls, answers FAQs, and books appointments automatically.
+          </p>
+          
+          {/* Browser Mockup */}
+          <div className="bg-canvas border border-hairline rounded-md overflow-hidden floating-shadow mx-auto max-w-[760px] text-left">
+            <div className="h-10 bg-canvas-elevated border-b border-hairline flex items-center px-4 justify-between">
+              <div className="flex items-center gap-1.5 w-1/4">
+                <span className="w-2 h-2 rounded-full bg-red-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+              </div>
+              <div className="bg-canvas border border-hairline rounded-sm text-[10px] text-mute font-mono px-3 py-1 w-2/4 text-center select-none truncate">
+                https://api.mobashir.ali/demo_receptionist
+              </div>
+              <div className="w-1/4" />
+            </div>
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: `<div style="position: relative; padding-bottom: 64.98194945848375%; height: 0;"><iframe src="https://www.loom.com/embed/c50c653d691f40cf863b8737ea336789" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES TEASER SECTION */}
       <section className="bg-canvas py-20 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
         <div className="w-full max-w-7xl">
