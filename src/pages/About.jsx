@@ -13,15 +13,27 @@ export default function About() {
       <section className="bg-canvas py-24 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
         <div className="w-full max-w-3xl">
           {/* Header */}
-          <div className="mb-12 text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12 text-left"
+          >
             <p className="typography-mono-eyebrow text-mute mb-3">// About Me</p>
             <h1 className="font-sans typography-heading-lg md:text-5xl text-ink font-semibold">
               First-year student, full-time builder.
             </h1>
-          </div>
+          </motion.div>
 
           {/* Personal Bio Narrative */}
-          <div className="typography-body-lg text-body space-y-6 leading-relaxed">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="typography-body-lg text-body space-y-6 leading-relaxed"
+          >
             <p>
               Hi, I'm Mobashir Ali. I am currently a first-year <strong>B.Tech Computer Science Engineering</strong> student, specializing in <strong>Artificial Intelligence and Machine Learning (AI/ML)</strong>. 
             </p>
@@ -34,10 +46,16 @@ export default function About() {
             <p>
               My approach focuses on simplicity and performance: zero bloated page builders, clean semantic code, and concrete integrations that deliver clear business outcomes.
             </p>
-          </div>
+          </motion.div>
 
           {/* Core Technical Values */}
-          <div className="mt-16 border-t border-hairline pt-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-16 border-t border-hairline pt-10"
+          >
             <h2 className="typography-heading-md text-ink font-semibold mb-6">Technical Focus</h2>
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="bg-canvas-elevated border border-hairline rounded-md p-5 whisper-shadow">
@@ -53,10 +71,16 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* About Call To Action */}
-          <div className="mt-16 border-t border-hairline pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-16 border-t border-hairline pt-10 flex flex-col sm:flex-row items-center justify-between gap-6"
+          >
             <div>
               <h3 className="typography-label-sm text-ink font-semibold">Want to collaborate?</h3>
               <p className="typography-body-sm text-mute mt-1">Book a free strategy session to discuss website speeds or AI coordination.</p>
@@ -69,7 +93,7 @@ export default function About() {
             >
               Book Strategy Session
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
