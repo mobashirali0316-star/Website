@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
+import Background3D from '../components/Background3D.jsx'
 import { CALENDLY_URL } from '../constants.js'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section className="relative bg-canvas text-ink pt-32 pb-24 px-6 md:px-8 overflow-hidden flex flex-col items-center geist-mesh-gradient border-b border-hairline">
+        <Background3D />
         <div className="mx-auto max-w-4xl flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
