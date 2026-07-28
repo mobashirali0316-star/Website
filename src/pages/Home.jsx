@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
+import Background3D from '../components/Background3D.jsx'
 import { CALENDLY_URL } from '../constants.js'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section className="relative bg-canvas text-ink pt-32 pb-24 px-6 md:px-8 overflow-hidden flex flex-col items-center geist-mesh-gradient border-b border-hairline">
+        <Background3D />
         <div className="mx-auto max-w-4xl flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -158,7 +160,13 @@ export default function Home() {
 
       {/* VIDEO DEMO SECTION */}
       <section className="bg-canvas py-20 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
-        <div className="w-full max-w-4xl text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          className="w-full max-w-4xl text-center"
+        >
           <p className="typography-mono-eyebrow text-mute mb-3">// Demonstration</p>
           <h2 className="font-sans typography-heading-lg text-ink font-semibold mb-6">
             See the AI receptionist in action
@@ -186,12 +194,18 @@ export default function Home() {
               }}
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* SERVICES TEASER SECTION */}
       <section className="bg-canvas py-20 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
-        <div className="w-full max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          className="w-full max-w-7xl"
+        >
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
               <p className="typography-mono-eyebrow text-mute mb-3">// Services</p>
@@ -227,12 +241,18 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* PORTFOLIO TEASER SECTION */}
       <section className="bg-canvas py-20 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
-        <div className="w-full max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          className="w-full max-w-7xl"
+        >
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
               <p className="typography-mono-eyebrow text-mute mb-3">// Portfolio</p>
@@ -299,12 +319,18 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* CTA BAND */}
       <section className="bg-canvas text-ink py-20 px-6 md:px-8 border-b border-hairline flex flex-col items-center">
-        <div className="w-full max-w-4xl text-center flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          className="w-full max-w-4xl text-center flex flex-col items-center"
+        >
           <p className="typography-mono-eyebrow text-mute mb-5">// Work with me</p>
           <h2 className="font-sans typography-heading-lg md:text-5xl text-ink font-semibold">
             Ready to automate your small business?
@@ -320,7 +346,7 @@ export default function Home() {
               Book a Strategy Call
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   )
