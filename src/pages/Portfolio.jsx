@@ -87,8 +87,8 @@ const projects = [
     stack: ['Next.js', 'React', 'Tailwind CSS', 'Precision Layouts'],
     url: 'https://infra-script-studio.vercel.app/',
     linkText: 'infra-script-studio.vercel.app',
-    imageWebp: '/portfolio/infra-script.jpg',
-    imagePng: '/portfolio/infra-script.jpg',
+    imageWebp: '/portfolio/hpgk.png',
+    imagePng: '/portfolio/hpgk.png',
     category: 'Corporate & Real Estate'
   },
   {
