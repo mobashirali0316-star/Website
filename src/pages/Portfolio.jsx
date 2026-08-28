@@ -32,8 +32,8 @@ const projects = [
     stack: ['Next.js', 'React', 'Firebase', 'Tailwind CSS', 'Recharts'],
     url: 'https://presentov2.vercel.app/',
     linkText: 'presentov2.vercel.app',
-    imageWebp: '/portfolio/presento.jpg',
-    imagePng: '/portfolio/presento.jpg',
+    imageWebp: '/portfolio/presento.png',
+    imagePng: '/portfolio/presento.png',
     category: 'AI & SaaS'
   },
   {
@@ -76,8 +76,8 @@ const projects = [
     stack: ['React', 'Tailwind CSS', 'WhatsApp API Integration', 'Framer Motion'],
     url: 'https://goodday-v2-beige.vercel.app/',
     linkText: 'goodday-v2-beige.vercel.app',
-    imageWebp: '/portfolio/goodday-v2.jpg',
-    imagePng: '/portfolio/goodday-v2.jpg',
+    imageWebp: '/portfolio/goodday-v2.png',
+    imagePng: '/portfolio/goodday-v2.png',
     category: 'E-commerce & Web'
   },
   {

@@ -280,9 +280,9 @@ export default function Home() {
                 <span className="typography-mono-eyebrow text-mute text-[10px]">CLIENT E-COMMERCE</span>
                 <div className="w-full h-40 overflow-hidden rounded-sm border border-hairline my-4 bg-canvas">
                   <picture>
-                    <source srcSet="/portfolio/goodday-v2.jpg" />
+                    <source srcSet="/portfolio/goodday-v2.png" />
                     <img
-                      src="/portfolio/goodday-v2.jpg"
+                      src="/portfolio/goodday-v2.png"
                       alt="Good Day Sweets & Bakers Screenshot"
                       loading="lazy"
                       className="w-full h-full object-cover object-top hover:scale-[1.02] transition-transform duration-300"
