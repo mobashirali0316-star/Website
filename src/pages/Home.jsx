@@ -274,24 +274,24 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Good Day Bakery Teaser */}
+            {/* Good Day Sweets & Bakers Teaser */}
             <div className="bg-canvas-elevated border border-hairline rounded-md p-6 md:p-8 whisper-shadow flex flex-col justify-between">
               <div>
-                <span className="typography-mono-eyebrow text-mute text-[10px]">DEMO PROTOTYPE</span>
+                <span className="typography-mono-eyebrow text-mute text-[10px]">CLIENT E-COMMERCE</span>
                 <div className="w-full h-40 overflow-hidden rounded-sm border border-hairline my-4 bg-canvas">
                   <picture>
-                    <source srcSet="/portfolio/goodday-bakery.webp" type="image/webp" />
+                    <source srcSet="/portfolio/goodday-v2.jpg" />
                     <img
-                      src="/portfolio/goodday-bakery.png"
-                      alt="Good Day Bakery Screenshot"
+                      src="/portfolio/goodday-v2.jpg"
+                      alt="Good Day Sweets & Bakers Screenshot"
                       loading="lazy"
                       className="w-full h-full object-cover object-top hover:scale-[1.02] transition-transform duration-300"
                     />
                   </picture>
                 </div>
-                <h3 className="typography-heading-md text-ink font-semibold mb-3">Good Day Bakery</h3>
+                <h3 className="typography-heading-md text-ink font-semibold mb-3">Good Day Sweets & Bakers</h3>
                 <p className="typography-body-md text-body mb-6">
-                  A high-speed prototype bakery interface displaying responsive product cards, shopping carts, and conversion audits.
+                  A modern online catalog and ordering system for a premium sweets and artisan bakery in Gorakhpur, integrated with WhatsApp booking.
                 </p>
               </div>
               <Link to="/portfolio" className="text-link hover:underline typography-body-md font-medium mt-auto">
