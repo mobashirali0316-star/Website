@@ -26,17 +26,6 @@ const projects = [
     category: 'AI & SaaS'
   },
   {
-    type: 'AI-POWERED SAAS',
-    title: 'Campus360 AI',
-    description: 'An AI-powered web scraper and intelligence tool that processes, filters, and simplifies complex official university notifications into a conversational query interface for students.',
-    stack: ['Next.js', 'React', 'OpenAI API', 'Cheerio Scraper', 'Tailwind CSS'],
-    url: 'https://campus360-ai.vercel.app/',
-    linkText: 'campus360-ai.vercel.app',
-    imageWebp: '/portfolio/campus360.jpg',
-    imagePng: '/portfolio/campus360.jpg',
-    category: 'AI & SaaS'
-  },
-  {
     type: 'UTILITY WEB APP',
     title: 'Presento | Attendance Tracker',
     description: 'A clean, intuitive student attendance tracker designed to streamline presence logging, analytics, and group tracking for class coordinators and organizations.',
