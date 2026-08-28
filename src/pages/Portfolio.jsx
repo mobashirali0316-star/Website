@@ -101,17 +101,6 @@ const projects = [
     imageWebp: '/portfolio/arbit-infratel.jpg',
     imagePng: '/portfolio/arbit-infratel.jpg',
     category: 'Corporate & Real Estate'
-  },
-  {
-    type: 'PERSONAL WEBSITE',
-    title: 'Mobashir Ali — Portfolio',
-    description: 'My custom personal branding hub showing services, voice automation flowcharts, dental client success stories, interactive FAQ components, and integrated scheduling widgets.',
-    stack: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'SEO Schema'],
-    url: 'https://www.mobashirali.in/',
-    linkText: 'www.mobashirali.in',
-    imageWebp: '/portfolio/website.jpg',
-    imagePng: '/portfolio/website.jpg',
-    category: 'E-commerce & Web'
   }
 ]
 
