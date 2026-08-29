@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import SEO from '../components/SEO.jsx'
-import { CALENDLY_URL, EMAIL } from '../constants.js'
+import { CALENDLY_URL, EMAIL, LINKEDIN_URL, GITHUB_URL } from '../constants.js'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -147,10 +147,28 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="typography-body-md text-link hover:underline font-semibold block"
+                  className="typography-body-md text-link hover:underline font-semibold block mb-4"
                 >
                   {EMAIL}
                 </a>
+                <div className="border-t border-hairline pt-4 flex gap-4 text-sm font-medium">
+                  <a
+                    href={LINKEDIN_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body hover:text-ink transition-colors inline-flex items-center gap-1"
+                  >
+                    LinkedIn ↗
+                  </a>
+                  <a
+                    href={GITHUB_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body hover:text-ink transition-colors inline-flex items-center gap-1"
+                  >
+                    GitHub ↗
+                  </a>
+                </div>
               </div>
             </div>
           </div>

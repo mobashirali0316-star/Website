@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import SEO from '../components/SEO.jsx'
-import { CALENDLY_URL } from '../constants.js'
+import { CALENDLY_URL, LINKEDIN_URL, GITHUB_URL } from '../constants.js'
 
 export default function About() {
   return (
@@ -52,6 +52,26 @@ export default function About() {
                   Static React interfaces styled with clean styling utilities to ensure high page speed scores and search engine indexing.
                 </p>
               </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-mono text-mute">
+              <span>// Profiles:</span>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-body hover:text-ink border border-hairline px-3 py-1 rounded-sm bg-canvas-elevated transition-colors"
+              >
+                LinkedIn ↗
+              </a>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-body hover:text-ink border border-hairline px-3 py-1 rounded-sm bg-canvas-elevated transition-colors"
+              >
+                GitHub ↗
+              </a>
             </div>
           </div>
 

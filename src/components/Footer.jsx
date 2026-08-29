@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { EMAIL, BRAND } from '../constants.js'
+import { EMAIL, BRAND, LINKEDIN_URL, GITHUB_URL } from '../constants.js'
 
 export default function Footer() {
   return (
@@ -38,10 +38,40 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: Direct CTAs */}
+          {/* Column 2: Direct CTAs & Socials */}
           <div>
             <h4 className="typography-label-sm text-ink font-semibold mb-4 font-sans">Connect</h4>
             <ul className="flex flex-col gap-2.5">
+              <li>
+                <a 
+                  href={LINKEDIN_URL} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="typography-body-md text-body hover:text-ink transition-colors inline-flex items-center gap-1.5"
+                >
+                  LinkedIn
+                  <svg className="w-3 h-3 fill-none stroke-current opacity-70" viewBox="0 0 24 24" strokeWidth="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href={GITHUB_URL} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="typography-body-md text-body hover:text-ink transition-colors inline-flex items-center gap-1.5"
+                >
+                  GitHub
+                  <svg className="w-3 h-3 fill-none stroke-current opacity-70" viewBox="0 0 24 24" strokeWidth="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </li>
               <li>
                 <a href={`mailto:${EMAIL}`} className="typography-body-md text-body hover:text-ink transition-colors">
                   {EMAIL}
@@ -49,7 +79,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/contact" className="typography-body-md text-body hover:text-ink transition-colors">
-                  Book a Strategy Call
+                  Book Strategy Call
                 </Link>
               </li>
             </ul>
