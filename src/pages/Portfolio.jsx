@@ -37,14 +37,25 @@ const projects = [
     category: 'AI & SaaS'
   },
   {
+    type: 'DESKTOP AUTOMATION & OCR',
+    title: 'Smart Automated File Organizer',
+    description: 'A cross-platform Python desktop application that automatically monitors folders in real-time, organizes files into categorised directories, extracts rich metadata and OCR text from PDFs and images, and indexes records into a searchable SQLite database.',
+    stack: ['Python', 'Tkinter', 'Watchdog', 'PyMuPDF', 'Tesseract OCR', 'SQLite'],
+    url: 'https://github.com/mobashirali0316-star/smart-file-organizer',
+    linkText: 'github.com/mobashirali0316-star/smart-file-organizer',
+    imageWebp: '/portfolio/smart-file-organizer.png',
+    imagePng: '/portfolio/smart-file-organizer.png',
+    category: 'AI & SaaS'
+  },
+  {
     type: 'CLIENT WEBSITE',
     title: 'VK Dental Care',
     description: 'A high-converting dental practice website optimized for Maxillofacial Surgery and Dental Implants in Bangalore, featuring clean booking call-to-actions, visual treatment cards, and full SEO.',
     stack: ['React', 'Tailwind CSS', 'Framer Motion', 'SEO Optimization'],
     url: 'https://vk-dental-blue.vercel.app/',
     linkText: 'vk-dental-blue.vercel.app',
-    imageWebp: '/portfolio/vk-dental.jpg',
-    imagePng: '/portfolio/vk-dental.jpg',
+    imageWebp: '/portfolio/vk-dental.png',
+    imagePng: '/portfolio/vk-dental.png',
     category: 'Dental Clinics'
   },
   {
@@ -54,8 +65,8 @@ const projects = [
     stack: ['React', 'Tailwind CSS', 'Framer Motion', 'Aesthetic Branding'],
     url: 'https://revive-dental-hazel.vercel.app/',
     linkText: 'revive-dental-hazel.vercel.app',
-    imageWebp: '/portfolio/revive-dental.jpg',
-    imagePng: '/portfolio/revive-dental.jpg',
+    imageWebp: '/portfolio/revive-dental.png',
+    imagePng: '/portfolio/revive-dental.png',
     category: 'Dental Clinics'
   },
   {
@@ -98,8 +109,8 @@ const projects = [
     stack: ['React', 'Tailwind CSS', 'Google Maps API', 'Leads Sync'],
     url: 'https://arbit-infratel-pvt-limited.vercel.app/',
     linkText: 'arbit-infratel-pvt-limited.vercel.app',
-    imageWebp: '/portfolio/arbit-infratel.jpg',
-    imagePng: '/portfolio/arbit-infratel.jpg',
+    imageWebp: '/portfolio/arbit-infratel.png',
+    imagePng: '/portfolio/arbit-infratel.png',
     category: 'Corporate & Real Estate'
   }
 ]
@@ -215,8 +226,8 @@ export default function Portfolio() {
                       rel="noopener noreferrer"
                       className="text-link hover:text-link-deep transition-colors typography-body-md font-semibold inline-flex items-center gap-1.5"
                     >
-                      <span>Visit: {project.linkText}</span>
-                      <svg className="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
+                      <span className="truncate">{project.url.includes('github.com') ? 'GitHub: ' : 'Visit: '}{project.linkText}</span>
+                      <svg className="w-3.5 h-3.5 shrink-0 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         <polyline points="15 3 21 3 21 9" />
                         <line x1="10" y1="14" x2="21" y2="3" />
