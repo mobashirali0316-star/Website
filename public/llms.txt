@@ -1,0 +1,32 @@
+# Mobashir Ali — AI Receptionist & Web Systems Engineering
+
+> Personal portfolio and services site for Mobashir Ali, an AI Systems & Full-Stack Engineer specializing in AI voice & chat receptionists for US dental clinics, custom web development, and SaaS applications.
+
+## About
+- **Name:** Mobashir Ali
+- **Website:** https://mobashirali.in
+- **Email:** mobashirali0316@gmail.com
+- **GitHub:** https://github.com/mobashirali0316-star
+- **Core Focus:** AI Receptionists, Intelligent Automation, High-Conversion Web Apps, Full-Stack Development.
+
+## Core Services
+1. **AI Receptionist for Dental Clinics & Local Businesses:**
+   - 24/7 autonomous call answering, patient triage, automated appointment scheduling into PMS/calendars, insurance inquiry handling, and SMS follow-ups.
+2. **Custom Web Application Engineering:**
+   - High-performance, SEO-optimized web systems built with React, Vite, Next.js, and Astro.
+3. **Desktop Automation & OCR Utilities:**
+   - Real-time directory monitoring, document categorization, PDF/Image OCR extraction, and local database indexing.
+
+## Key Projects & Case Studies
+- **RentDivider (https://rentdivider.com):** Algorithmic fair rent splitting SaaS based on room dimensions, amenities, and private facilities.
+- **Smart Automated File Organizer (https://github.com/mobashirali0316-star/smart-file-organizer):** Cross-platform Python desktop application with real-time watchdog monitoring, PyMuPDF text parsing, Tesseract OCR, and SQLite search indexing.
+- **Revive Dental Clinic (https://revive-dental-hazel.vercel.app/):** Aesthetic dentistry and facial cosmetic clinic portal with patient intake workflows and smile design gallery.
+- **VK Dental Care (https://vk-dental-blue.vercel.app/):** Dental surgery practice web portal with treatment showcase and appointment conversion funnel.
+- **Kubek Family Dentistry (https://kubek-denral-care.vercel.app/):** Cosmetic and family dentistry portal optimized for local search discovery and patient intake.
+- **Presento (https://presentov2.vercel.app/):** Student attendance and presence analytics system with real-time reporting.
+- **Campus360 AI (https://campus360-ai.vercel.app):** Resource scheduling and classroom capacity optimizer.
+
+## Important Links
+- Portfolio: https://mobashirali.in/portfolio
+- Services: https://mobashirali.in/services
+- Contact & Booking: https://mobashirali.in/contact
