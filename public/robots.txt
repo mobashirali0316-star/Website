@@ -33,4 +33,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://mobashirali.in/sitemap.xml
+Sitemap: https://www.mobashirali.in/sitemap.xml

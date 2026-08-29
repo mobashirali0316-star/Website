@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mobashirali.in/</loc>
+    <loc>https://www.mobashirali.in/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mobashirali.in/services</loc>
+    <loc>https://www.mobashirali.in/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mobashirali.in/portfolio</loc>
+    <loc>https://www.mobashirali.in/portfolio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mobashirali.in/about</loc>
+    <loc>https://www.mobashirali.in/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mobashirali.in/contact</loc>
+    <loc>https://www.mobashirali.in/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mobashirali.in/faq</loc>
+    <loc>https://www.mobashirali.in/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mobashirali.in/privacy-policy</loc>
+    <loc>https://www.mobashirali.in/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://mobashirali.in/terms</loc>
+    <loc>https://www.mobashirali.in/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 
 export default function SEO({ title, description }) {
   const location = useLocation()
-  const siteUrl = 'https://mobashirali.in'
+  const siteUrl = 'https://www.mobashirali.in'
   const canonicalUrl = `${siteUrl}${location.pathname}`
 
   useEffect(() => {

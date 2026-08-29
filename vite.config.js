@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     sitemap({
-      hostname: 'https://mobashirali.in',
+      hostname: 'https://www.mobashirali.in',
       dynamicRoutes: [
         '/services',
         '/portfolio',
